@@ -1,0 +1,20 @@
+type Album {
+	id: ID!
+	title: String!
+	genero: String
+	lanzado: String
+	precio: Double
+}
+
+# Root
+extend type Query {
+	findAllAlbums: [Album]!
+	countAlbums: Long!
+}
+
+# Root
+extend type Mutation {
+	createAlbum(title: String!,genero: String, lanzado: String, precio: Double): Album!
+	updateAlbum(id: ID!,title: String,,genero: String, lanzado: String,precio: Double): Album!
+	deleteTutorial(id: ID!): Boolean
+}
